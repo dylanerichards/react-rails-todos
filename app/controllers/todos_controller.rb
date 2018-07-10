@@ -1,0 +1,20 @@
+class TodosController < ApplicationController
+  def index
+    @todos = Todo.all
+    render json: { todos: @todos }
+  end
+
+  def update
+    todo = Todo.find(params[:id])
+
+    todo.update_attributes(todo_params)
+
+    render json: todo
+  end
+
+  private
+
+  def todo_params
+    params.require(:todo).permit(:done)
+  end
+end
