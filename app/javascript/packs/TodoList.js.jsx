@@ -26,6 +26,16 @@ class TodoList extends React.Component {
 
   }
 
+  removeTodo = (id) => {
+    const todos = this.state.todos.filter(todo => todo.id !== id)
+
+    axios.delete(`/todos/${id}`)
+      .then((response) => {
+        this.setState({ todos })
+      })
+
+  }
+
   toggleDone = (id) => {
     const todo = this.state.todos.find(todo => todo.id === id)
 
@@ -60,7 +70,7 @@ class TodoList extends React.Component {
           {
             this.state.todos.map((todo) => {
               return (
-                <Todo todo={todo} key={todo.id} toggleDone={this.toggleDone} />
+                <Todo todo={todo} key={todo.id} toggleDone={this.toggleDone } remove={this.removeTodo}/>
                 )
             })
           }

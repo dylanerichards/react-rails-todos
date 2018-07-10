@@ -13,6 +13,14 @@ class TodosController < ApplicationController
     render json: todo
   end
 
+  def destroy
+    todo = Todo.find(params[:id])
+
+    todo.destroy
+
+    render json: todo
+  end
+
   private
 
   def todo_params
