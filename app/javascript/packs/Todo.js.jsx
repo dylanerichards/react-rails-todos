@@ -10,7 +10,7 @@ const Todo = ({todo, toggleDone, remove}) => {
     <div className={ `todo ${done}` } >
       <h3 onClick={() => toggleDone(todo.id)}>{ todo.title }</h3>
       <p onClick={() => toggleDone(todo.id)}>{ todo.body }</p>
-      <span onClick={() => remove(todo.id)}>remove</span>
+      <button onClick={() => remove(todo.id)}>remove</button>
     </div>
   )
 }
