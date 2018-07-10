@@ -7,9 +7,12 @@ const Todo = ({todo, toggleDone, remove}) => {
   const done = todo.done ? "done" : "incomplete"
 
   return (
-    <div className={ `todo ${done}` } >
-      <h3 onClick={() => toggleDone(todo.id)}>{ todo.title }</h3>
-      <p onClick={() => toggleDone(todo.id)}>{ todo.body }</p>
+    <div>
+      <div className={ `todo ${done}` } onClick={() => toggleDone(todo.id)}>
+        <h3 >{ todo.title }</h3>
+        <p>{ todo.body }</p>
+
+      </div>
       <button onClick={() => remove(todo.id)}>remove</button>
     </div>
   )
