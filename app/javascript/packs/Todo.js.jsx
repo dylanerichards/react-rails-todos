@@ -13,6 +13,7 @@ const Todo = ({todo, toggleDone, remove}) => {
         <p>{ todo.body }</p>
 
       </div>
+
       <button onClick={() => remove(todo.id)}>remove</button>
     </div>
   )
