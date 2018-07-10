@@ -28,8 +28,6 @@ class TodoList extends React.Component {
   }
 
   handleSubmit = (title, body) => {
-    const todo = { title, body }
-
     axios.post(`/todos`, {
        todo: { title, body }
     })
