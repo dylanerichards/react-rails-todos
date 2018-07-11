@@ -1,6 +1,6 @@
 class TodosController < ApplicationController
   def index
-    @todos = Todo.all.sort_by(&:id)
+    @todos = Todo.all.order(created_at: :desc)
 
     render json: { todos: @todos }
   end

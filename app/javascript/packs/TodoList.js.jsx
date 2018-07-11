@@ -33,7 +33,7 @@ class TodoList extends React.Component {
     })
       .then((response) => {
         this.setState((prevState) => {
-          return { todos: [...prevState.todos, response.data.todo] }
+          return { todos: [response.data.todo, ...prevState.todos] }
       })
     })
   }
