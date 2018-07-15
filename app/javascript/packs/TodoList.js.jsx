@@ -56,9 +56,12 @@ class TodoList extends React.Component {
     }).then((response) => {
 
       this.setState((prevState) => {
+        const todos = prevState.todos
+
+        const todo = todos.find(todo => todo.id === response.data.id)
         todo.done = !todo.done
 
-        return { }
+        return { todos }
       })
 
     });
