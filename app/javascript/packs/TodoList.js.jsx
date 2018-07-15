@@ -56,14 +56,9 @@ class TodoList extends React.Component {
     }).then((response) => {
 
       this.setState((prevState) => {
-        const todos = prevState.todos.filter(todo => todo.id !== id)
-        const todo = prevState.todos.find(todo => todo.id == id)
-
         todo.done = !todo.done
 
-        const sorted = _.sortBy(todos.concat(todo), "id")
-
-        return {todos: sorted}
+        return { }
       })
 
     });
