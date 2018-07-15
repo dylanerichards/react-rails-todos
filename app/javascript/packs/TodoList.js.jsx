@@ -7,7 +7,6 @@ import TodoForm from './TodoForm.js.jsx'
 import axios from "axios"
 import _ from "lodash"
 
-
 class TodoList extends React.Component {
   constructor(props) {
     super(props)
@@ -66,8 +65,6 @@ class TodoList extends React.Component {
 
     });
 
-
-
   }
 
   render() {
@@ -90,12 +87,5 @@ class TodoList extends React.Component {
     )
   }
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(
-    <TodoList />,
-    document.body.appendChild(document.createElement('div')),
-  )
-})
 
 export default TodoList
